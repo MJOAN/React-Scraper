@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
 import DeleteBtn from "../../components/DeleteBtn";
-import API from "../../utils/API";
+import APIClient from "../../utils/apiClient";
+import APIServer from "../../utils/apiServer";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
@@ -12,7 +13,7 @@ class Articles extends Component {
     articles: [],
     topic: "",
     title: "",
-    snippet: "",
+    url: "",
     date: ""
   };
 
@@ -23,21 +24,19 @@ class Articles extends Component {
 
   // Loads all  and sets them to this.state
   loadArticles = () => {
-    API.getNYTData()
+    APIClient.getArticles()
       .then(res =>
-        this.setState({ articles: res.data, topic: "", title: "", snippet: "", date: "" })
+        this.setState({ articles: res.data, title: "", url: "", date: "" })
       )
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads books from the db
-/*  deleteArticle = id => {
+  deleteArticle = id => {
     API.deleteArticle(id)
       .then(res => this.loadArticles())
       .catch(err => console.log(err));
   };
-*/
-  // Handles updating component state when the user types into the input field
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -45,16 +44,15 @@ class Articles extends Component {
     });
   };
 
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.topic || this.state.date) {
-      API.getNYTData({
+    if (this.state.title && this.state.author) {
+      API.saveArticle({
         title: this.state.title,
+        url: this.state.url,
         date: this.state.date
       })
-        .then(res => this.getNYTData())
+        .then(res => this.loadArticles())
         .catch(err => console.log(err));
     }
   };
@@ -100,7 +98,7 @@ class Articles extends Component {
                     <ListItem key={article._id}>
                       <a href={"/articles/" + article._id}>
                         <strong>
-                          {article.title} by {article.date}
+                          {article.title} by {article.date} here: {article.url}
                         </strong>
                       </a>
                       <DeleteBtn onClick={() => this.deleteArticle(article._id)} />

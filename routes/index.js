@@ -6,8 +6,11 @@ const apiRoutes = require("./api");
 router.use("/api", apiRoutes);
 
 // If no API routes are hit, send the React app
-router.use(function(req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+router.use("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 module.exports = router;
+
+
+//`*` (get) will load your single HTML page (with ReactJS) public/index.html.
