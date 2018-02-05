@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
-import API from "../../utils/API";
+import APIClient from "../../utils/apiClient";
+import APIServer from "../../utils/apiServer";
 
 class Results extends Component {
   state = {
@@ -13,7 +14,7 @@ class Results extends Component {
   // e.g. localhost:3000/articles/599dcb67f0f16317844583fc
 
   componentDidMount() {
-    API.getArticle(this.props.match.params.id)
+    APIServer.getArticle(this.props.match.params.id)
       .then(res => this.setState({ article: res.data }))
       .catch(err => console.log(err));
   }

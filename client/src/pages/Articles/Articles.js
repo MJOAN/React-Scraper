@@ -19,11 +19,12 @@ class Articles extends Component {
 
   // When the component mounts, load all books and save them to this.state.books
   componentDidMount() {
-    this.loadArticles();
+    //this.loadArticles();
   }
 
   // Loads all  and sets them to this.state
   loadArticles = () => {
+    //load saved articles
     APIClient.getArticles()
       .then(res =>
         this.setState({ articles: res.data, title: "", url: "", date: "" })
@@ -31,8 +32,17 @@ class Articles extends Component {
       .catch(err => console.log(err));
   };
 
+    searchArticles = () => {
+      console.log('searching',this.state.topic)
+    APIClient.getArticles(this.state.topic)
+      .then(res =>
+        this.setState({ articles: res.data.response.docs, title: "", url: "", date: "" })
+      )
+      .catch(err => console.log(err));
+  };
+
   deleteArticle = id => {
-    API.deleteArticle(id)
+    APIServer.deleteArticle(id)
       .then(res => this.loadArticles())
       .catch(err => console.log(err));
   };
@@ -46,15 +56,16 @@ class Articles extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveArticle({
+    this.searchArticles()
+   /*(this.state.title && this.state.author) {
+      APIServer.saveArticle({
         title: this.state.title,
         url: this.state.url,
         date: this.state.date
       })
         .then(res => this.loadArticles())
         .catch(err => console.log(err));
-    }
+    }*/
   };
 
   render() {
@@ -79,7 +90,7 @@ class Articles extends Component {
                 placeholder="Date (optional)"
               />
               <FormBtn
-                disabled={!(this.state.topic || this.state.date)}
+                disabled={!this.state.topic}
                 onClick={this.handleFormSubmit}
               >
                 Search
@@ -96,11 +107,15 @@ class Articles extends Component {
                 {this.state.articles.map(article => {
                   return (
                     <ListItem key={article._id}>
-                      <a href={"/articles/" + article._id}>
+                      <a href={article.web_url}>
                         <strong>
-                          {article.title} by {article.date} here: {article.url}
+                          {article.headline.main} 
+                          {article.web_url}
                         </strong>
                       </a>
+                      {article.byline ? article.byline.original : null} 
+                      {article.pub_date} 
+                      <FormBtn onClick={() => this.saveArticle(article._id)} />
                       <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
                     </ListItem>
                   );
