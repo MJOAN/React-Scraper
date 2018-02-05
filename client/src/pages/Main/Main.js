@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
-import DeleteBtn from "../../components/DeleteBtn";
+import { DeleteBtn, SavedBtn } from "../../components/Button";
 import APIClient from "../../utils/apiClient";
 import APIServer from "../../utils/apiServer";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
-class Articles extends Component {
-  // Setting our component's initial state
+class Main extends Component {
   state = {
     articles: [],
     topic: "",
@@ -17,28 +16,29 @@ class Articles extends Component {
     date: ""
   };
 
-  // When the component mounts, load all books and save them to this.state.books
+  // When the component mounts, load all and save them to this.state.articles
   componentDidMount() {
     //this.loadArticles();
+    //this.searchArticles();
   }
 
   // Loads all  and sets them to this.state
   loadArticles = () => {
-    //load saved articles
-    APIClient.getArticles()
-      .then(res =>
-        this.setState({ articles: res.data, title: "", url: "", date: "" })
-      )
-      .catch(err => console.log(err));
+    console.log('saved articles', this.state.articles)
+  APIClient.getArticles()
+    .then(res =>
+      this.setState({ articles: res.data, title: "", url: "", date: "" })
+    )
+    .catch(err => console.log(err));
   };
 
-    searchArticles = () => {
-      console.log('searching',this.state.topic)
-    APIClient.getArticles(this.state.topic)
-      .then(res =>
-        this.setState({ articles: res.data.response.docs, title: "", url: "", date: "" })
-      )
-      .catch(err => console.log(err));
+  searchArticles = () => {
+    console.log('search articles topic: ',this.state.topic)
+  APIClient.getArticles(this.state.topic)
+    .then(res =>
+      this.setState({ articles: res.data.response.docs, title: "", url: "", date: "" })
+    )
+    .catch(err => console.log(err));
   };
 
   deleteArticle = id => {
@@ -108,15 +108,19 @@ class Articles extends Component {
                   return (
                     <ListItem key={article._id}>
                       <a href={article.web_url}>
-                        <strong>
+                        <div>
                           {article.headline.main} 
                           {article.web_url}
-                        </strong>
+                        </div>
                       </a>
-                      {article.byline ? article.byline.original : null} 
-                      {article.pub_date} 
-                      <FormBtn onClick={() => this.saveArticle(article._id)} />
+                        <div>
+                          {article.byline ? article.byline.original : null} 
+                          {article.pub_date} 
+                        </div>
+                        <div>
+                      <SavedBtn onClick={() => this.saveArticle(article._id)} />
                       <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
+                      </div>
                     </ListItem>
                   );
                 })}
@@ -131,4 +135,4 @@ class Articles extends Component {
   }
 }
 
-export default Articles;
+export default Main;

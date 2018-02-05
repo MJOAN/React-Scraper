@@ -18,17 +18,3 @@ const APIClient = {
 
 export default APIClient;
 
-
-
-/*
-  $('tr', '.text-right').each( (i, elm) => {
-  nytimes.push({
-    });
-  });
-  return(nytimes);
-  })
-  .then ( (nytimes) => {
-  console.log(nytimes);
-});*/
-
-
