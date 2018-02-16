@@ -3,7 +3,7 @@ import "./List.css";
 
 export const List = ({ children }) => {
   return (
-    <div className="list-overflow-container">
+    <div className="mb-1 list-overflow-container">
       <ul className="list-group">
         {children}
       </ul>

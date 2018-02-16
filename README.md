@@ -47,10 +47,7 @@
  * Use React routing and [socket.io](http://socket.io) to create a notification or a component that triggers whenever a user saves an article. Your message should include the title of the saved article.
    * Say you have multiple browsers open, each one visiting your site. If you save an article in one browser, then all of your browsers should notify you that a new article was saved.
    * [Socket.io NPM package](https://www.npmjs.com/package/socket.io)
-
- **Good Luck!**
  
  ## Copyright
  
-	
  Coding Boot Camp (C) 2016. All Rights Reserved.

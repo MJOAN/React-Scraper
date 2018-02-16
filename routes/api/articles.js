@@ -1,15 +1,14 @@
 const router = require("express").Router();
-const articlesController = require("../../controllers/controller");
+const articlesController = require("../../controllers/articleControllers");
 
 // Matches with "/api/articles"
-router.route("/")
-  .get(articlesController.findAll)
-  .post(articlesController.create);   // post or save articles to db
-
+router.get("/", articlesController.findAll);
 // Matches with "/api/articles/:id"
-router.route("/:id")
-  .get(articlesController.findById)
-  .put(articlesController.update)
-  .delete(articlesController.remove);
+router.get("/:id", articlesController.findById);
+// matches with "/api/create
+router.post("/create", articlesController.create); // post or save articles to db
+// matches with "/api/remove/:id
+router.delete("/remove/:id", articlesController.remove);
+
 
 module.exports = router;

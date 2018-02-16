@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./pages/Main";
-import Saved from "./pages/Saved";
+import Results from "./pages/Results";
 import Nav from "./components/Nav";
 
 const App = () =>
@@ -10,8 +10,8 @@ const App = () =>
       <Nav />
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route exact path="/articles" component={Main} />
-        <Route exact path="/articles/:id" component={Saved} />
+        <Route exact path="/articles" component={Results} />
+        <Route exact path="/articles/:id" component={Results} />
       </Switch>
     </div>
   </Router>;
