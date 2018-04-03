@@ -4,7 +4,7 @@
  
  In this activity, you'll create a new React-based rendition of the New York Times Article Search application. This assignment requires you to create React components, work with helper functions, and utilize the React mounting lifecycle to query and display articles based on user searches. You'll also use Node, Express and MongoDB so that users can save articles to read later.
  
- ![Screenshot 1](screenshot1.png)
+  ![screenshot1](screenshot)
 
  ### Instructions
  
@@ -47,7 +47,10 @@
  * Use React routing and [socket.io](http://socket.io) to create a notification or a component that triggers whenever a user saves an article. Your message should include the title of the saved article.
    * Say you have multiple browsers open, each one visiting your site. If you save an article in one browser, then all of your browsers should notify you that a new article was saved.
    * [Socket.io NPM package](https://www.npmjs.com/package/socket.io)
+
+ **Good Luck!**
  
  ## Copyright
  
+	
  Coding Boot Camp (C) 2016. All Rights Reserved.
