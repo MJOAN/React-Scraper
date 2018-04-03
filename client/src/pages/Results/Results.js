@@ -21,7 +21,7 @@ class Results extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container>
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
