@@ -1,16 +1,21 @@
 import axios from "axios";
 
 export default {
-    // Gets all articles saved from database
-    savedArticles: function() {
-        return axios.get("https://react-newyorktimes-scraper.herokuapp.com/" + "/api/articles");
-    },
-    // Gets the articles with the given id
-    saveArticle: function(id) {
-        return axios.post("https://react-newyorktimes-scraper.herokuapp.com/" + "/api/articles/" + id);
-    },
-    // Deletes the articles with the given id from database
-    deleteArticle: function(id) {
-        return axios.delete("https://react-newyorktimes-scraper.herokuapp.com/" + "/api/articles/" + id);
-    }
+  // Gets all books
+  savedArticles: function() {
+    return axios.get("/api/articles");
+  },
+  // Gets the book with the given id
+  getArticle: function(id) {
+    return axios.get("https://react-newyorktimes-scraper.herokuapp.com/" + "/api/article/" + id);
+  },
+  // Deletes the book with the given id
+  deleteArticle: function(id) {
+    return axios.delete("https://react-newyorktimes-scraper.herokuapp.com/" + "/api/article/" + id);
+  },
+  // Saves a book to the database
+  saveArticle: function(articleData) {
+    return axios.post("https://react-newyorktimes-scraper.herokuapp.com/" + "/api/articles", articleData);
+  }
 };
+

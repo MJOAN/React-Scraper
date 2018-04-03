@@ -1,2 +1,1 @@
-export * from "./DeleteBtn";
-export * from "./SavedBtn";
+export { default } from "./Button";

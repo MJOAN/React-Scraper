@@ -1,5 +1,4 @@
-.btn {
- 	text-align: center;
-    width: 150px;
-    height: 50px;
+.delete-btn {
+  float: right;
+  color: #e74944;
 }

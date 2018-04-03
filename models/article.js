@@ -1,23 +1,18 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const ArticlesSchema = new Schema({
-  headline: {
+const ArticleSchema = new Schema({
+  title: {
     type: String,
     required: true,
   },
   // url, a string, must be entered
-  snippet: {
-    type: String,
-    required: true
-  },
-  // url, a string, must be entered
-  web_url: {
+  url: {
     type: String,
     required: true
   },
   // date is just a string
-  pub_date: {
+  date: {
     type: Date,
     default: Date.now
   },
@@ -27,6 +22,6 @@ const ArticlesSchema = new Schema({
   }
 });
 
-console.log("article schema created!")
-const Articles = mongoose.model("Articles", ArticlesSchema);
-module.exports = Articles;
+const Article = mongoose.model("Article", ArticleSchema);
+
+module.exports = Article;

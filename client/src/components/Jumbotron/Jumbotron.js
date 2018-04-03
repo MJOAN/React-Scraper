@@ -1,10 +1,8 @@
 import React from "react";
-//   {children}
 
 const Jumbotron = ({ children }) =>
-   <div class="jumbotron">
-	</div>
-
-
+  <div style={{ height: 300 }} className="jumbotron">
+    {children}
+  </div>;
 
 export default Jumbotron;

@@ -16,8 +16,8 @@ app.use(function(req, res, next) {
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static("client/build"));
-//app.use(express.static("public"));
+//app.use(express.static("client/build"));
+app.use(express.static("public"));
 app.use("/", routes);
 
 mongoose.Promise = global.Promise;
