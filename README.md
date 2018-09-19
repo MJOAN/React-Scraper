@@ -1,4 +1,4 @@
- ### React-Scraper
+ ### React-New York Times Scraper
 
  ### Overview
  
