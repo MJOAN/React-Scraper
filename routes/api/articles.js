@@ -1,5 +1,5 @@
 const router = require("express").Router();
-import { findAll, create, findById, remove, update } from "../../controllers/controller";
+const { findAll, create, findById, remove, update } = require("../../controllers/controller");
 const controller = require("../../controllers/controller");
 
 

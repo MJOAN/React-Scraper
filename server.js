@@ -34,7 +34,6 @@ app.use("/", routes);
 
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://MJOAN:Github1!@ds231758.mlab.com:31758/heroku_xhc1bsnf");
-
 const db = mongoose.connection;
 
 db.on("error", function(err) {
