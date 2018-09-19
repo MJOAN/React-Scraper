@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import APIClient from "../../utils/apiClient";
 import APIServer from "../../utils/apiServer";
+import "./Results.css";
 
 class Results extends Component {
   state = {
@@ -25,7 +26,7 @@ class Results extends Component {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>New York Times Article Results</h1>
+              <h1 className="nyt-header">New York Times Results</h1>
               <h3>{this.state.article.title} {this.state.article.date} {this.state.article.url} </h3>
             </article>
           </Col>

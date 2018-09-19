@@ -8,12 +8,14 @@
 
 .list-overflow-container ul {
   margin: 0;
+  height: 0px;
 }
 
 .list-overflow-container li {
   border-radius: 0px;
   border-left: none;
   border-right: none;
+  height: 100px; /*this changes it all!*/
 }
 
 .list-overflow-container li * {
@@ -21,13 +23,18 @@
 }
 
 .list-overflow-container li a {
-  color: #2A878C;
+  color: #41bef4; 
 }
 
 .list-overflow-container li:first-child {
-  border-top: none;
+  border-top: none;  
 }
 
 .list-overflow-container li:last-child {
   border-bottom: none;
 }
+
+.list-group-item{
+  width:800px;
+}
+

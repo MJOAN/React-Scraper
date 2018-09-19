@@ -1,20 +1,25 @@
 const router = require("express").Router();
-const controller = require("../../controllers/controller.js");
+import { findAll, create, findById, remove, update } from "../../controllers/controller";
+const controller = require("../../controllers/controller");
 
-router.get("/", controller.findAll);
-router.post("/create", controller.create); 
-router.get("/:id", controller.findById);
-router.delete("/remove/:id", controller.remove);
-router.put(("/:id", controller.update)
+
+// router.get("/", findAll);
+// router.post("/create", create); 
+// router.get("/:id", findById);
+// router.delete("/remove/:id", remove);
+// router.put(("/:id", update)
+
+
+// Matches with "/api/"
+router.route("/")
+  .get(controller.findAll)
+  .post(controller.create);
+
+// Matches with "/api/article/:id"
+router
+  .route("/:id")
+  .get(controller.findById)
+  .put(controller.update)
+  .delete(controller.remove);
 
 module.exports = router;
-
-
-//Matches with "/api/articles"
-//   .get(articlesController.findAll)
-//   .post(articlesController.create); 
-
-//Matches with "/api/articles/:id"
-//   .get(articlesController.findById)
-//   .put(articlesController.update)
-//   .delete(articlesController.remove);

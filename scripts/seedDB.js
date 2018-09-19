@@ -5,7 +5,7 @@ const Articles = require("../models/article");
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nytimes")  
-// mongodb://MJOAN:Github1!@ds231758.mlab.com:31758/heroku_xhc1bsnf" || "mongodb://localhost/nytimes");
+
 
 const seedDB = [
   {

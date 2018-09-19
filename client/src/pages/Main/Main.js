@@ -70,11 +70,11 @@ class Main extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container>
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>New York Times Article Scraper</h1>
+              <h1>New York Times Scraper</h1>
             </Jumbotron>
             <form>
               <Input
@@ -109,8 +109,7 @@ class Main extends Component {
                     <ListItem key={article._id}>
                       <a href={article.web_url}>
                         <div>
-                          {article.headline.main} 
-                          {article.web_url}
+                          {article.headline.main} {article.web_url}
                         </div>
                       </a>
                         <div>

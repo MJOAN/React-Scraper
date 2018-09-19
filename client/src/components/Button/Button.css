@@ -1,4 +1,11 @@
 .delete-btn {
   float: right;
   color: #e74944;
+  width: 25px;
+}
+
+.saved-btn {
+  float: right;
+  color: green;
+  width: 25px;
 }
