@@ -5,7 +5,7 @@ const Nav = () =>
     <div className="container-fluid">
       <div className="navbar-header">
         <a href="/" className="navbar-brand">
-          New York Times Article Scraper
+          React New York Times
         </a>
       </div>
     </div>
