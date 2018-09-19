@@ -2,7 +2,9 @@
 
  ### Overview
  
- In this activity, I created a new React-based rendition of the New York Times Article Search application. This assignment requires to create React components, work with helper functions, and utilize the React mounting lifecycle to query and display articles based on user searches. I use Node, Express and MongoDB so that users can save articles to read later!
+In this activity, I created a new React-based rendition of the New York Times Article Search application. Check out [my demo](http://https://react-newyorktimes-scraper.herokuapp.com/) to study the app's basic functionality! 
+
+This assignment requires to create React components, work with helper functions, and utilize the React mounting lifecycle to query and display articles based on user searches. I use Node, Express and MongoDB so that users can save articles to read later!
  
   ![screenshot2](screenshot2.png)
   ![screenshot3](screenshot3.png)
