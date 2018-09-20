@@ -22,11 +22,11 @@ This assignment requires to create React components, work with helper functions,
       {
         title: 'Ali Sells Jersey House And Moves to Chicago',
         date: '1974-07-18T00:00:00Z',
-        url: 'http://query.nytimes.com/gst/abstract.html?res=9A0DE5D8173FEF34BC4052DFB166838F669EDE'
+        url: 'https://query.nytimes.com/gst/abstract.html?res=9A0DE5D8173FEF34BC4052DFB166838F669EDE'
       }
       ```
  
- 5. Create a Node/Express/MongoDB/ReactJS app called `nytreact`. This will be a recreation of the [NYT Articles Search](http://nytarticle-search.herokuapp.com/) exercise application we built back in [Week 6](../../../06-ajax/01-Activities/16-NYTSearch/Solved/NYTArticleSearch_Best_Solution/nyt-example.html). Running this application will:
+ 5. Create a Node/Express/MongoDB/ReactJS app called `nytreact`. Running this application will:
  
     * Create a Bootstrap layout similar to that displayed in [HW_Assignment.png](HW_Assignment.png). This should be a SPA (Single Page Application) that uses [`react-router`](https://github.com/reactjs/react-router) to navigate, hide and show your React components without changing the route within Express.
  
@@ -47,7 +47,7 @@ This assignment requires to create React components, work with helper functions,
  
  ### Bonus Live Updates to Saved Articles
  
- * Use React routing and [socket.io](http://socket.io) to create a notification or a component that triggers whenever a user saves an article. Your message should include the title of the saved article.
+ * Use React routing and [socket.io](https://socket.io) to create a notification or a component that triggers whenever a user saves an article. Your message should include the title of the saved article.
    * Say you have multiple browsers open, each one visiting your site. If you save an article in one browser, then all of your browsers should notify you that a new article was saved.
    * [Socket.io NPM package](https://www.npmjs.com/package/socket.io)
 
