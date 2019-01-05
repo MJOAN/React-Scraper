@@ -44,4 +44,4 @@ Here I created a React-based rendition of the New York Times Article Search appl
      - **Saved** - Renders articles that are saved in the MongoDB and allows the user to visit the article's url or delete it from the MongoDB. This page may be made up of multiple smaller components or JSX that renders plain HTML elements.
 
 ##### Copyright
-Coding Boot Camp (C) 2016. All Rights Reserved.
+##### Coding Boot Camp (C) 2016. All Rights Reserved.
