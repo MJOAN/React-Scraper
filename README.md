@@ -1,7 +1,7 @@
 ## NYT React Search
 ### Overview
 
-Here I created a React-based rendition of the New York Times Article Search application using React components, helper/util functions, and the React mounting lifecycle to query and display articles based on user searches and built with Node, Express and MongoDB.
+Here I created a React-based rendition of the New York Times Article Search application using React components, helper/util functions, and the React mounting lifecycle to query and display articles based on user searches and built with Node, Express and MongoDB. Thanks to the Coding Boot Camp for template code.
 
 ### Process:
 
